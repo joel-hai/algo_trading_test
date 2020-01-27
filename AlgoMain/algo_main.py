@@ -1,7 +1,9 @@
 from AlgoMain import Import_Data as ID, Visual as VSL
 
-aapl = ID.data_retrieval()
+upm = ID.data_retrieve_BU()
 
-print(aapl)
+#aapl = ID.data_retrieval()
 
-print(VSL.visu_1(aapl))
+print(upm)
+
+print(VSL.visu_1(upm))
