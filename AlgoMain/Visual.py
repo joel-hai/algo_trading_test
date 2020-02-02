@@ -88,5 +88,19 @@ def visu_9(aapl, signals):
 
     ax1.plot(signals.loc[signals.positions == -1.0].index,
              signals.Short_Moving[signals.positions == -1.0],
-             'v', markersize = 10, color = 'k')
+             'v', markersize=10, color='k')
+    return plt.show()
+
+def visu_10(portfolio,signals):
+    fig= plt.figure()
+    ax1 = fig.add_subplot(111, ylabel='Portfolio value in Dollas')
+
+    portfolio['total'].plot(ax=ax1, lw=2)
+    ax1.plot(portfolio.loc[signals.positions == 1.0]
+             .index,
+             portfolio.total[signals.positions == 1.0],
+             '^', markersize=10, color='m')
+    ax1.plot(portfolio.loc[signals.positions == -1.0].index,
+             portfolio.total[signals.positions == -1.0],
+             'v', markersize=10, color='k')
     return plt.show()
